@@ -2,7 +2,7 @@
 
 [![CI - Java](https://github.com/SeleniumHQ/selenium/actions/workflows/ci-java.yml/badge.svg)](https://github.com/SeleniumHQ/selenium/actions/workflows/ci-java.yml)
 
-[Hassan Qayyum -- Hafiz Zeeshan](https://github.com/PMO-Tracker/API-Automation)
+[Hassan Qayyum -- Hafiz Zeeshan](https://github.com/PMO-Tracker/UI-Automation)
 
 <a href="https://selenium.dev"><img src="https://selenium.dev/images/selenium_logo_square_green.png" width="180" alt="Selenium"/></a>
 
@@ -36,7 +36,7 @@ API documentation:
     src/main/java/pages: Each page contains its locators and functions
     src/main/java/utils: It contains common code snippets like auth file etc
     src/main/java/resources: It contains global resources like global properties etc
-    src/test/java/: It contains all test files like base test login test etc
+    src/test/java/: It contains all test files like testComponents.base test tests.login test etc
     allure-results: It contains test results in the form of json files
     allure-report: It contains html report of all tests
 

@@ -1,6 +1,9 @@
-package base;
+package testComponents.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,6 +13,8 @@ import pages.LoginPage;
 import utils.Utils;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 public class BaseTests {
@@ -40,7 +45,11 @@ public class BaseTests {
         return driver;
 
     }
-
+    public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        String source = ts.getScreenshotAs(OutputType.BASE64);
+        return source;
+    }
     @BeforeMethod(alwaysRun = true)
     public LoginPage launchApplication() {
         driver = setUp();

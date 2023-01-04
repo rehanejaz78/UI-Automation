@@ -1,6 +1,5 @@
 /.idea/
-/allure-report/
-/allure-results/
+/reports/
 /target/
 /resources/
 /src/main/resources/*.png
