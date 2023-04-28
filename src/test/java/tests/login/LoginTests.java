@@ -22,8 +22,8 @@ public class LoginTests extends BaseTests {
         if(userRole().equals("SuperAdmin")){
             Assert.assertTrue(loginPage.projectsMetricsTab().isDisplayed());
         }
-        else{
-            System.out.println("Undefined Role");
-        }
+//        else{
+//            System.out.println("Undefined Role");
+//        }
     }
 }
