@@ -7,8 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.LoginPage;
 import utils.Utils;
 
@@ -29,6 +28,7 @@ public class BaseTests {
             ChromeOptions options = new ChromeOptions();
 //            options.addArguments("--headless");
             options.addArguments("--window-size=1920,1080"); // so that it may not enter into mobile size window.
+            options.addArguments("--remote-allow-origins=*");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
 
@@ -50,16 +50,20 @@ public class BaseTests {
         String source = ts.getScreenshotAs(OutputType.BASE64);
         return source;
     }
-    @BeforeMethod(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true)
     public LoginPage launchApplication() {
         driver = setUp();
         loginPage = new LoginPage(driver);
-        loginPage.navigate();
         return loginPage;
 
     }
 
-    @AfterClass
+    public String userRole(){
+        String userRole =  Utils.getElementFromPropertiesFile("userRole", "global");
+        return userRole;
+    }
+
+    @AfterSuite
     public void tearDown() {
         driver.quit();
     }

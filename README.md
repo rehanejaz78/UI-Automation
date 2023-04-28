@@ -37,8 +37,8 @@ API documentation:
     src/main/java/utils: It contains common code snippets like auth file etc
     src/main/java/resources: It contains global resources like global properties etc
     src/test/java/: It contains all test files like testComponents.base test tests.login test etc
-    allure-results: It contains test results in the form of json files
-    allure-report: It contains html report of all tests
+    target/reports: It contains test results in the form of html
+   
 
 
 ## Commands
