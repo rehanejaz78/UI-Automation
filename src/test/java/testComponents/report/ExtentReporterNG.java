@@ -10,10 +10,9 @@ public class ExtentReporterNG {
         ExtentSparkReporter reporter = new ExtentSparkReporter(path);
         reporter.config().setReportName("PMO Tracker UI Automation Results");
         reporter.config().setDocumentTitle("Test Results");
-
         ExtentReports extent = new ExtentReports();
         extent.attachReporter(reporter);
-        extent.setSystemInfo("Tester", "Automated");
+        extent.setSystemInfo("Testing", "Automation");
         return extent;
     }
 }

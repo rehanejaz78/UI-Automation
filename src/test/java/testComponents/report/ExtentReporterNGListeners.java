@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import testComponents.base.BaseTests;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import testComponents.base.BaseTests;
 
 import java.io.IOException;
 
@@ -49,7 +49,7 @@ public class ExtentReporterNGListeners extends BaseTests implements ITestListene
 
             filePath = getScreenshot(result.getMethod().getMethodName(), driver);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+//            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         extentTest.get().addScreenCaptureFromBase64String(filePath, result.getMethod().getMethodName());
@@ -60,21 +60,9 @@ public class ExtentReporterNGListeners extends BaseTests implements ITestListene
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        // TODO Auto-generated method stub
-
+        extentTest.get().log(Status.SKIP, "Test skipped");
     }
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-        // TODO Auto-generated method stub
-
-    }
 
     @Override
     public void onFinish(ITestContext context) {

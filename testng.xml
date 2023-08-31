@@ -4,9 +4,10 @@
     <listeners>
         <listener class-name="testComponents.report.ExtentReporterNGListeners"/>
     </listeners>
-    <test thread-count="1" name="Test">
+    <test thread-count="2" name="Test">
         <classes>
-            <class name="tests.login.LoginTests"/>
+            <class name="tests.homePageTests.HomePageTests"/>
+            <class name="tests.adminModuleTests.UserPageTests"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
